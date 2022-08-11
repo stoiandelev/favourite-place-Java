@@ -11,7 +11,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>School</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+<!--    <version>0.0.1-SNAPSHOT</version>-->
     <name>School</name>
     <description>School</description>
     <properties>
@@ -47,11 +47,11 @@
             <optional>true</optional>
         </dependency>
 
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <scope>runtime</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <scope>runtime</scope>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -130,12 +130,13 @@
             <version>1.8.2</version>
         </dependency>
 
-<!--&lt;!&ndash;        for postgresql &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.postgresql</groupId>-->
-<!--            <artifactId>postgresql</artifactId>-->
-<!--            <version>42.3.3</version>-->
-<!--        </dependency>-->
+<!--        for postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+            <version>42.3.3</version>
+        </dependency>
 
 
     </dependencies>

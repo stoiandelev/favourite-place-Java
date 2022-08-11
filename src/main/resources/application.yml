@@ -9,11 +9,11 @@
 
 spring:
     datasource:
-        driverClassName: com.mysql.cj.jdbc.Driver
-        username: root
-        password: 12345678
-        url: jdbc:mysql://localhost:3306/favourite_place_in_the_world?useSSL=false&createDatabaseIfNotExist=true
-#        driverClassName: org.postgresql.Driver
+#        driverClassName: com.mysql.cj.jdbc.Driver
+        username: ${JDBC_DATABASE_USERNAME:}
+        password: ${JDBC_DATABASE_PASSWORD:}
+        url: ${JDBC_DATABASE_URL:}
+        driverClassName: org.postgresql.Driver
 
     jpa:
         hibernate:
@@ -21,8 +21,8 @@ spring:
         open-in-view: false
         properties:
             hibernate:
-                dialect: org.hibernate.dialect.MySQL8Dialect
-#                dialect: org.hibernate.dialect.PostgreSQLDialect
+#                dialect: org.hibernate.dialect.MySQL8Dialect
+                dialect: org.hibernate.dialect.PostgreSQLDialect
                 format_sql: true
     mvc:
         hiddenmethod:
@@ -87,6 +87,10 @@ scrape_configs:
 
       static_configs:
           - targets: ['localhost:8080']
+
+server:
+    port: ${PORT:8080}
+
 #
-#server:
+    #server:
 #    port=${PORT:8080}

@@ -1,2 +1,2 @@
-web: java -jar target/School-0.0.1-SNAPSHOT.jar
+web: java -jar target/School-2.6.7.jar
 

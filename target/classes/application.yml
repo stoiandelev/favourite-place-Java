@@ -34,7 +34,7 @@ mail:
     host: "localhost"
     port: 1025
     username: favourite-place
-    password: 
+    password:
 
 #this is for check the time AOP SLO in MilliSeconds 1000 ms = 1s
 #ex -> 60 for local. 500 for remote
