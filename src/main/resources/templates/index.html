@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -17,7 +17,9 @@
 <main>
 
 
-<nav th:replace="/fragment/common::nav"></nav>
+<nav th:replace="/fragment/common::nav">
+
+</nav>
 
 <div class="container bg-blur ">
         <h1>Welcome to Favourite place in the world App</h1>
