@@ -82,7 +82,7 @@ public class UserServiceImpl implements UserService {
                 .setActive(true);
 
         //This is for mailHog
-        emailService.sendRegistrationEmail(newUser.getEmail(), newUser.getUsername());
+//        emailService.sendRegistrationEmail(newUser.getEmail(), newUser.getUsername());
 
         userRepository.save(newUser);
 
