@@ -10,9 +10,9 @@
 spring:
     datasource:
         driverClassName: com.mysql.cj.jdbc.Driver
-        username: ${username}
-        password: ${password}
-        url: ${data_source}
+        username: root
+        password: 12345678
+        url: jdbc:mysql://localhost:3306/favourite_place_in_the_world?useSSL=false&createDatabaseIfNotExist=true
 #        driverClassName: org.postgresql.Driver
 
     jpa:
@@ -33,8 +33,8 @@ spring:
 mail:
     host: "localhost"
     port: 1025
-    username: ${mailHog_username}
-    password: ${mailHog_password}
+    username: favourite-place
+    password: 
 
 #this is for check the time AOP SLO in MilliSeconds 1000 ms = 1s
 #ex -> 60 for local. 500 for remote
