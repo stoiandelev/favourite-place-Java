@@ -1,0 +1,16 @@
+spring:
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+        defer-datasource-initialization: true
+    sql:
+        init:
+            mode: never
+
+#this is for mailHog
+mail:
+    host: "localhost"
+    port: 1025
+    username: "favourite-place@favourite-place.com"
+    password: ""
+

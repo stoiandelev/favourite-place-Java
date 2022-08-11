@@ -1,0 +1,15 @@
+.stats {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 130px;
+}
+
+body{
+    background: #28fe2b;
+}

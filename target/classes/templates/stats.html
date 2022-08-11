@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistic</title>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/stats.css">
+</head>
+
+<body>
+
+<div th:replace="/fragment/common::nav"></div>
+
+
+<div class="stats">
+    <h1 >Welcome to Stats!</h1>
+    <h3 >Total Requests <th:block th:text="${stats.getTotalRequest()}"></th:block></h3>
+    <h3 >Anonymous Requests <th:block th:text="${stats.getAnonymousRequest()}"></th:block></h3>
+    <h3 >Authorized Requests <th:block th:text="${stats.getAuthRequest()}"></th:block></h3>
+</div>
+
+<div th:replace="/fragment/common::footer"></div>
+
+</body>
+</html>

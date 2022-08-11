@@ -1,0 +1,92 @@
+#logging:
+##    level:
+##        org.hibernate.SQL: DEBUG
+###        org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+###        org.springframework: DEBUG
+#    jdbc:mysql://localhost:3306/favourite_place_in_the_world?useSSL=false&createDatabaseIfNotExist=true
+#      ${JDBC_DATABASE_URL:}
+# url: jdbc:mysql://localhost:3306/favourite_place_in_the_world?useSSL=false&createDatabaseIfNotExist=true
+
+spring:
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        username: ${username}
+        password: ${password}
+        url: ${data_source}
+#        driverClassName: org.postgresql.Driver
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        open-in-view: false
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+#                dialect: org.hibernate.dialect.PostgreSQLDialect
+                format_sql: true
+    mvc:
+        hiddenmethod:
+            filter:
+                enabled: true
+
+#this is for mailHog SMTP server test
+mail:
+    host: "localhost"
+    port: 1025
+    username: ${mailHog_username}
+    password: ${mailHog_password}
+
+#this is for check the time AOP SLO in MilliSeconds 1000 ms = 1s
+#ex -> 60 for local. 500 for remote
+slos-config:
+    slos:
+        -
+            id: local_operation
+            threshold: 60
+        -
+            id: remote_operation
+            threshold: 5
+
+#for actuator endpoint
+management:
+    server:
+        port: 8081
+    metrics:
+        enabled: true
+        export:
+            prometheus:
+                enabled: true
+    endpoint:
+        web:
+            base-path: /actuator
+        prometheus:
+            enabled: true
+    endpoints:
+        jmx:
+            exposure:
+                include: "*"
+        web:
+            exposure:
+                include: "*"
+    info:
+        env:
+            enabled: true
+
+#for grafana and prometheus
+global:
+    scrape_interval: 5s
+    evaluation_interval: 15s
+
+scrape_configs:
+    - job_name: 'prometheus'
+
+      honor_labels: true
+
+      metric_path: /actuator/prometheus
+      scheme: http
+
+      static_configs:
+          - targets: ['localhost:8080']
+#
+#server:
+#    port=${PORT:8080}

@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(146, 143, 143);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    /*--this flex is for responsive design--*/
+    flex-wrap: wrap;
+    margin-top: 80px;
+    margin-bottom: 70px;
+}
+
+.card {
+    background: white;
+    width: 270px;
+    margin: 30px;
+    border-radius: 20px;
+
+}
+
+.card-image {
+    height: 170px;
+    margin-bottom: 15px;
+    background-size: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.image{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+
+
+.card p {
+    padding: 10px;
+}
+
+.card a {
+    background-color: black;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    margin: 20px 50px;
+    text-decoration: none;
+    border-radius: 20px
+}
+
+.card h2 {
+    text-align: center;
+}
+
+.card:hover {
+    background-color: rgb(20, 202, 14);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: all 1s ease;
+}
+
+
+
+/*this is for pagination css*/
+html {
+    font-size: 62.5%;
+}
+
+.pagination .heading--text {
+
+    display: flex;
+    justify-content: center;
+    /*--this flex is for responsive design--*/
+    flex-wrap: wrap;
+    margin-top: 80px;
+    margin-bottom: 70px;
+
+}
+
+.pagination .pagination--link {
+    margin-left: 600px;
+
+}
+
+.pagination .pagination--link li {
+    display: inline-block;
+    margin: 0 .1rem;
+    line-height: 2.8;
+}
+
+.pagination .pagination--link li a:link,
+.pagination .pagination--link li a:visited {
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 1rem;
+    background: #fc3030;
+    border-radius: 1.5rem;
+    text-decoration: none;
+    color: #555;
+    cursor: pointer;
+    transition: all .4s;
+
+}
+
+.pagination .pagination--link li a:hover {
+    background: #54a0ff;
+    color: #fff;
+    padding: 1.2rem;
+}
+
+.pagination .pagination--link li .active:link,
+.pagination .pagination--link li .active:visited {
+    background: #54a0ff;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

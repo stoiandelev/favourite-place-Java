@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+</head>
+
+<body>
+
+<nav th:replace="/fragment/common::nav"></nav>
+
+
+<div class="split-screen">
+
+    <div class="left">
+        <section class="copy">
+            <h1>Login to our website</h1>
+            <p>A lot of 100 beautiful place of all world!</p>
+        </section>
+    </div>
+
+    <div class="right">
+        <form
+                th:action="@{/users/login}"
+                th:method="post"
+
+
+        >
+            <section class="copy">
+                <h2>Login</h2>
+                <div class="login-container">
+                    <p>Don't have account?<a href="/users/register">
+                        <strong>Register</strong> </a>
+                    </p>
+                </div>
+            </section>
+
+            <h2 class="bg-danger rounded" th:if="${bad_credentials}">Enter valid username and password!</h2>
+
+            <div class="input-container email">
+                <label>Username</label>
+                <input th:value="${userName}" name="username" type="text" placeholder="Username">
+                <small class="bg-danger text-light rounded">
+                </small>
+            </div>
+
+            <div class="input-container password">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Must be at least 4 characters">
+                <small class="bg-danger text-light rounded">
+                </small>
+            </div>
+            <button class="signup-button" type="submit">Login</button>
+
+        </form>
+    </div>
+</div>
+
+<footer th:replace="/fragment/common::footer"></footer>
+
+</body>
+
+</html>

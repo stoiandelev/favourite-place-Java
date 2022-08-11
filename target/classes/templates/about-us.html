@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="/css/about-us.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+</head>
+<body>
+
+<nav th:replace="/fragment/common::nav"></nav>
+
+    <div class="container">
+        <div class="title">
+            <h1>About Us</h1>
+        </div>
+        <div class="content">
+            <div class="article">
+                <h2>Welcome to our site. For more information click button Read More.</h2>
+                <a href="/about/details" class="button">Read More</a>
+            </div>
+            <div class="image-section">
+                <img src="/images/picture-about-us.jpeg">
+            </div>
+        </div>
+    </div>
+
+<footer th:replace="/fragment/common::footer"></footer>
+
+    
+</body>
+</html>

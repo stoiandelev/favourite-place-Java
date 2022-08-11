@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "slos-config",
+      "type": "com.example.favouritePlaceInTheWorld.web.sla.SLOsConfig",
+      "sourceType": "com.example.favouritePlaceInTheWorld.web.sla.SLOsConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "slos-config.slos",
+      "type": "java.util.List<com.example.favouritePlaceInTheWorld.web.sla.SLOsConfig$SLOConfig>",
+      "sourceType": "com.example.favouritePlaceInTheWorld.web.sla.SLOsConfig"
+    }
+  ],
+  "hints": []
+}

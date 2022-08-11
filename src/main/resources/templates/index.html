@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+</head>
+<body>
+
+
+<main>
+
+
+<nav th:replace="/fragment/common::nav"></nav>
+
+<div class="container bg-blur ">
+        <h1>Welcome to Favourite place in the world App</h1>
+        <p class="h4">The application is here to help us find beautiful place!</p>
+        <h3>
+            <a class="text-primay" href="/users/login">Login</a>
+            if you have an account or,
+            <a class="text-primay" href="/users/register">Register</a>
+            now and see all place.
+        </h3>
+</div>
+
+</main>
+
+<footer th:replace="/fragment/common::footer"></footer>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+
+<body>
+
+<nav th:replace="/fragment/common::nav"></nav>
+
+
+<div class="split-screen">
+    <div class="left">
+        <section class="copy">
+            <h1>Register to our website</h1>
+            <p>A lot of 100 beautiful place of all world!</p>
+        </section>
+    </div>
+
+    <div class="right">
+        <form
+                th:action="@{/users/register}"
+                th:method="post"
+                th:object="${userRegisterBindingModel}"
+        >
+
+            <section class="copy">
+                <h2>Register</h2>
+                <div class="login-container">
+                    <p>Already have account?<a href="/users/login">
+                        <strong>Log in</strong> </a>
+                    </p>
+                </div>
+            </section>
+
+            <div class="input-container email">
+                <label for="fullName">Full name</label>
+                <input th:field="*{fullName}" th:errorclass="bg-warning" id="fullName" name="fullName" type="text"
+                       placeholder="First and last name">
+                <small th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}" class="bg-danger text-light rounded">
+                </small>
+            </div>
+
+            <h2 th:if="${isExistsUsername}" class="bg-danger rounded">Username already exists!</h2>
+            <div class="input-container email">
+                <label for="username">Username</label>
+                <input th:field="*{username}" th:errorclass="bg-warning" id="username" name="username" type="text">
+                <small th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="bg-danger text-light rounded">
+                </small>
+            </div>
+
+            <h2 th:if="${isExistsEmail}" class="bg-danger rounded">Email already exists!</h2>
+            <div class="input-container email">
+                <label for="email">Email</label>
+                <input th:field="*{email}" th:errorclass="bg-warning" id="email" name="email" type="text">
+                <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="bg-danger text-light rounded">
+                </small>
+            </div>
+
+            <div class="input-container password">
+                <label for="password">Password</label>
+                <input th:field="*{password}" th:errorclass="bg-warning" id="password" name="password" type="password" placeholder="Must be at least 4 characters">
+                <small th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="bg-danger text-light rounded">
+                </small>
+            </div>
+
+            <button class="signup-button" type="submit">Register</button>
+
+        </form>
+    </div>
+</div>
+
+<footer th:replace="/fragment/common::footer"></footer>
+</body>
+
+
+</html>

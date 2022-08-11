@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User-profile-card</title>
+    <link rel="stylesheet" href="/css/user-profile-card.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+<nav th:replace="/fragment/common::nav"></nav>
+
+
+
+<div class="wrapper" >
+    <div class="left">
+        <img src="/images/picture-user-profile.png" alt="user" width="100">
+        <h4 th:text="${fullName}" ></h4>
+        <p  sec:authentication="name" ></p>
+    </div>
+
+    <div class="right">
+        <div class="info">
+            <h3>Information</h3>
+            <div class="info_data">
+                <h4>Email:</h4>
+                <p th:text="${email}" ></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer th:replace="/fragment/common::footer"></footer>
+
+</body>
+</html>

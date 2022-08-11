@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Block Ip Address</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/blockIp-page.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+<nav th:replace="/fragment/common::nav"></nav>
+
+
+
+
+<div class="container">
+    <div class="contact-box">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Add new block IP address</h2>
+
+            <form
+                    th:action="@{/block-ip-addresses}"
+                    th:method="post"
+                    th:object="${ipBlockedAddressBindingModel}"
+            >
+                <input th:field="*{textContent}" th:errorclass="bg-warning"
+                       type="text" class="field" placeholder="IP address" name="textContent">
+                <small th:if="${#fields.hasErrors('textContent')}" th:errors="*{textContent}" class="bg-danger text-light rounded">
+                </small>
+
+                <button class="btn">Add</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+<footer th:replace="/fragment/common::footer"></footer>
+
+</body>
+</html>

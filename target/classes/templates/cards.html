@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places</title>
+    <link rel="stylesheet" href="/css/cards.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+</head>
+
+<body>
+
+<nav th:replace="/fragment/common::nav"></nav>
+
+<section class="container">
+
+
+    <div th:each="p : ${allPlaces}" th:object="${p}" class="card">
+        <div class="card-image card-1">
+            <img class="image" th:src="*{imageURL}">
+        </div>
+        <h2 th:text="*{name}">CARD1</h2>
+        <p th:text="${#strings.substring(p.description, 0, 5)}">lorem ipsum dolor sit
+            lorem ipsum dolor sit
+            lorem ipsum dolor sit
+            lorem ipsum dolor sit
+        </p>
+        <a th:href="@{/places/cards/details/(id = *{id}) }">READ MORE</a>
+    </div>
+
+
+
+
+</section>
+
+<div class="pagination">
+    <ul class="pagination--link">
+
+        <li th:unless="${allPlaces.isFirst()}">
+            <a th:href="@{/places/all-places(size=${allPlaces.getSize()}, page=0) }"
+               href="#"> First
+            </a>
+        </li>
+
+        <li th:if="${allPlaces.hasPrevious()}">
+            <a th:href="@{/places/all-places(size=${allPlaces.getSize()}, page=${allPlaces.getNumber() - 1})}"
+               href="#"> Previous </a>
+        </li>
+
+        <li th:if="${allPlaces.hasNext()}" >
+            <a th:href="@{/places/all-places(size=${allPlaces.getSize()}, page=${allPlaces.getNumber() + 1})}"
+               href="#"> Next </a>
+        </li>
+
+        <li th:unless="${allPlaces.isLast()}">
+            <a th:href="@{/places/all-places(size=${allPlaces.getSize()}, page=${allPlaces.getTotalPages() - 1 }) }"
+               href="#"> Last </a>
+        </li>
+
+    </ul>
+</div>
+
+
+
+<footer th:replace="/fragment/common::footer"></footer>
+
+</body>
+
+</html>

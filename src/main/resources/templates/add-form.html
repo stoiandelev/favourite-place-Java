@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Add Place</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/add-form.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <!--    <link rel="stylesheet" href="/css/bootstrap.min.css">-->
+
+</head>
+
+
+<body>
+
+<nav th:replace="/fragment/common::nav"></nav>
+
+<div class="container">
+    <div class="contact-box">
+        <div class="left"></div>
+        <div class="right">
+            <h2>Add Place</h2>
+
+            <form
+                    th:action="@{/places/add-place}"
+                    th:method="post"
+                    th:object="${placeAddBindingModel}"
+
+            >
+
+
+                <input th:field="*{name}" th:errorclass="bg-warning" name="name"
+                       type="text" class="field" placeholder="Place Name">
+                <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="bg-danger text-light rounded">
+                </small>
+
+                <input th:field="*{imageURL}" th:errorclass="bg-warning" name="imageURL"
+                       type="text" class="field" placeholder="Image URL">
+                <small th:if="${#fields.hasErrors('imageURL')}" th:errors="*{imageURL}" class="bg-danger text-light rounded">
+                </small>
+
+                <textarea th:field="*{description}" th:errorclass="bg-warning" name="description"
+                          placeholder="Description" class="field"></textarea>
+                <small th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="bg-danger text-light rounded">
+                </small>
+
+                <button class="btn">Add</button>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<footer th:replace="/fragment/common::footer"></footer>
+
+</body>
+</html>

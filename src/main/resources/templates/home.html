@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+
+<nav th:replace="/fragment/common::nav"></nav>
+
+<div class="container">
+    <main></main>
+    <div id="content1"></div>
+
+
+    <div id="content2">
+        <div class="top-box top-box-a" id="weather">
+            <h4>Weather in Sofia</h4>
+            <h4><span id="box-a-temp">15</span><span>&#8451;</span></h4>
+            <img id="box-a-img" src="/images/sun.png" height="150px" alt="">
+        </div>
+    </div>
+
+    <div id="content3">
+        <div class="top-box top-box-b" id="weather1" >
+            <h4>Weather in Haskovo</h4>
+            <h4><span id="box-b-temp">27</span><span>&#8451;</span></h4>
+            <img id="box-b-img" src="/images/cloudy.png" height="150px" alt="">
+        </div>
+    </div>
+
+
+    <script th:src="@{/js/weather.js}"></script>
+
+    <footer th:replace="/fragment/common::footer"></footer>
+</div>
+
+
+</body>
+</html>
