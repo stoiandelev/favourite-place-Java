@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistic</title>
+    <title>Statistics</title>
     <link rel="stylesheet" href="/css/nav.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/stats.css">
@@ -14,7 +14,55 @@
 
 <body>
 
-<div th:replace="/fragment/common::nav"></div>
+<nav >
+    <div class="navigation">
+        <div class="nav-container">
+            <nav class="nav-checkbox">
+                <a  href="/home" class="logo">Home</a>
+                <input id="tab-nav" , type="checkbox" class="tab-nav">
+                <label for="tab-nav" class="tab-nav-label">Menu</label>
+                <ul class="tab-content">
+
+                    <th:block sec:authorize="!isAuthenticated()">
+                        <li><a th:href="@{/users/login}">Login</a></li>
+                        <li><a th:href="@{/users/register}">Register</a></li>
+                        <li><a th:href="@{/about}">About us</a></li>
+                    </th:block>
+
+                    <th:block sec:authorize="isAuthenticated()">
+                        <li><a th:href="@{#}"></a></li>
+                        <li><a th:href="@{/users/my-profile}">My profile</a></li>
+                        <li><a th:href="@{/places/add-place}">Add new place</a></li>
+                        <li><a th:href="@{/places/all-places}">All place</a></li>
+                        <li><a th:href="@{/statistics}" sec:authorize="hasRole('ADMIN')">Statistics</a></li>
+                        <li><a th:href="@{/block-ip-addresses}" sec:authorize="hasRole('ADMIN')">Block IP</a></li>
+                        <li>
+                            <a>
+                                Welcome, <th:block sec:authentication="name"></th:block>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a >
+                                <form th:action="@{/users/logout}" th:method="POST">
+                                    <input id="logout-btn"  type="submit" value="Logout">
+                                </form>
+                            </a>
+                        </li>
+
+
+
+
+                        <!--                        <li><a th:href="@{/users/logout}">Logout</a></li>-->
+
+                    </th:block>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+</nav>
 
 
 <div class="stats">
@@ -24,7 +72,25 @@
     <h3 >Authorized Requests <th:block th:text="${stats.getAuthRequest()}"></th:block></h3>
 </div>
 
-<div th:replace="/fragment/common::footer"></div>
+<footer id="footer" >
+    All rights reserved! &copy; Developed by Stoyan Delev!
+    <a class="iconsFooter" href="https://github.com/stoiandelev" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+    </a>
+    <a class="iconsFooter" href="https://www.linkedin.com/in/stoyan-delev/" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+    <a class="iconsFooter" href="https://twitter.com/DelevStoian" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+    </a>
+    <a class="iconsFooter" href="https://www.facebook.com/stoian.delev.9" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+    </a>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</footer>
 
 </body>
 </html>

@@ -7,8 +7,6 @@ public interface UserService {
 
     boolean register(UserServiceModel userServiceModel);
 
-    UserServiceModel findByEmailAndPassword(String email, String password);
-
     UserEntity findByEmail(String email);
 
     void registerAndLogin(UserServiceModel userServiceModel);

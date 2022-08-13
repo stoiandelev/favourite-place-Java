@@ -51,14 +51,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserServiceModel findByEmailAndPassword(String email, String password) {
-        return userRepository
-                .findByEmailAndPassword(email, password)
-                .map(userEntity -> modelMapper.map(userEntity, UserServiceModel.class))
-                .orElse(null);
-    }
-
-    @Override
     public UserEntity findByEmail(String email) {
         return userRepository
                 .findByEmail(email)
