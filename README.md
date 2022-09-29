@@ -83,5 +83,10 @@
 
 ![13  Schedule_for_Delete_unActive_User](https://user-images.githubusercontent.com/71894448/183279632-1c62b243-da2d-4f2d-bce9-9046ffeba777.jpg)
 
+## Database Diagram Screenshot
+
+<img width="838" alt="Screenshot 2022-09-29 at 22 21 58" src="https://user-images.githubusercontent.com/71894448/193123710-b703726d-5a66-4e11-83ed-cd63761375ec.png">
+
+
 # Enjoy! :)
 
