@@ -1,10 +1,31 @@
 # Welcome, to __Favourite-place-in-the-world__ project!
 
+### Contributor:
+
+* Stoyan Delev
+
 # https://shielded-cliffs-24314.herokuapp.com/ -> link
 
-## In project i use this tech: __Java, ThymeLeaf, Spring, MySQL, AOP, Prometheus, Grafana, MaihHog, Schedule__.
+## Technologies:
 
-### This is some of fucntion on application:
+## Front-End:
+
+* HTML
+* CSS
+* JavaScript
+* Thymeleaf
+
+## Back-End:
+
+* Java
+* Spring Boot
+* Spring MVC
+* Spring Security
+* MySQL Database
+* Hibernate
+* JPA
+
+### This is some of function on application:
 
 ## __Register:__
 
