@@ -24,6 +24,10 @@
 * MySQL Database
 * Hibernate
 * JPA
+* Scheduling
+* SLA
+* Grafana
+* MailHog
 
 ### This is some of function on application:
 
