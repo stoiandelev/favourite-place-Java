@@ -22,7 +22,7 @@
 
 <img width="1077" alt="4  Add and see comments" src="https://user-images.githubusercontent.com/71894448/183279410-64badc1b-e616-4f5c-a1bb-fddf7193b9c7.png">
 
-## __More Detais or DELETE if you owner:__
+## __More Details or DELETE, if you owner:__
 
 <img width="678" alt="5  More_Details_Or_Delete_if you owner" src="https://user-images.githubusercontent.com/71894448/183279449-40e44b8f-c649-4a68-8863-f4023b6c547b.png">
 
@@ -34,7 +34,7 @@
 
 <img width="510" alt="7  Profile_Information" src="https://user-images.githubusercontent.com/71894448/183279486-c3d6f24d-1c57-4e35-86c9-651973ae01f5.png">
 
-## __Admin can block IP, how dont have access to application__
+## __Admin can block IP, how do not have access to application__
 
 <img width="1080" alt="8  Admin_can_block_IP" src="https://user-images.githubusercontent.com/71894448/183279523-2ca563f3-1d5a-4f42-8757-21cc63124c4a.png">
 
@@ -54,7 +54,7 @@
 
 ![12  Iplements with_Aspcet_SLA](https://user-images.githubusercontent.com/71894448/183279601-5ab62718-4444-409f-8130-da9dd66e85ed.JPG)
 
-## __Sceduling for User with status not ACTIVE__
+## __Scheduling for User with status not ACTIVE__
 
 ![13  Schedule_for_Delete_unActive_User](https://user-images.githubusercontent.com/71894448/183279632-1c62b243-da2d-4f2d-bce9-9046ffeba777.jpg)
 
