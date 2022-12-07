@@ -4,8 +4,6 @@
 
 * Stoyan Delev
 
-# https://shielded-cliffs-24314.herokuapp.com/ -> link
-
 ## Technologies:
 
 ## Front-End:
